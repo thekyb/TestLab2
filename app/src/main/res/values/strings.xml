@@ -9,4 +9,8 @@
     <string name="Switch">Enable Something</string>
     <string name="CheckBox">CheckBox</string>
     <string name="RadioButton">RadioButton</string>
+    <string name="dialog_message">"Do you want to finish this activity?"</string>
+    <string name="dialog_title">"Finish Activity"</string>
+    <string name="Ok">"OK"</string>
+    <string name="Cancel">"Cancel"</string>
 </resources>
