@@ -18,11 +18,18 @@
     />
 
     <Button
-        android:text="@string/ButtonText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp"
-        android:id="@+id/myButton" />
+    android:text="@string/ButtonText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="25dp"
+    android:id="@+id/myButton" />
+    <Button
+    android:text="@string/StartChat"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/myButton"
+    android:layout_alignParentStart="true"
+    android:id="@+id/startChat" />
 </RelativeLayout>

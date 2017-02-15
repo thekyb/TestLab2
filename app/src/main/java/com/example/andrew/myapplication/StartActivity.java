@@ -24,6 +24,15 @@ public class StartActivity extends AppCompatActivity {
                 startActivityForResult(intent, 5);
             }
         });
+        Button chat = (Button)findViewById(R.id.startChat);
+        chat.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+                Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                startActivity(intent);
+            }
+        });
     }
     protected void onActivityResult(int requestCode, int responseCode, Intent data){
         if (requestCode == 5) {
