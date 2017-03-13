@@ -24,8 +24,13 @@ public class ListItemsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listitem);
+     /*   setContentView(R.layout.activity_listitem);
         ib = (ImageButton)findViewById(R.id.imageButton);
+        Log.i("ListItemsActivity", "tttttt"+ ib.getParent().toString());*/
+
+        setContentView(R.layout.activity_listitem2);
+        CheckBox cb = (CheckBox)findViewById(R.id.cb);
+        Log.i("ListItemsActivity", "tttttt check "+ cb.getParent().toString());
 
     }
     static final int REQUEST_IMAGE_CAPTURE = 1;
