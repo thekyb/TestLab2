@@ -10,6 +10,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.andrew.myapplication.StartActivity">
 
+    <Button
+        android:text="@string/StartChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myButton"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button5" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +25,7 @@
         android:id="@+id/textView" />
     />
 
-    <Button
+<Button
     android:text="@string/ButtonText"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -25,11 +33,20 @@
     android:layout_alignParentStart="true"
     android:layout_marginTop="25dp"
     android:id="@+id/myButton" />
-    <Button
+<Button
     android:text="@string/StartChat"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_below="@+id/myButton"
     android:layout_alignParentStart="true"
     android:id="@+id/startChat" />
+
+<Button
+    android:text="@string/weather_forecast"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/weatherButton"
+    android:layout_below="@+id/startChat"
+    android:layout_alignParentStart="true" />
+
 </RelativeLayout>

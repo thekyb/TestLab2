@@ -15,4 +15,6 @@
     <string name="Cancel">"Cancel"</string>
     <string name="Send">"Send"</string>
     <string name="StartChat">Start Chat</string>
+    <string name="weather_forecast">Weather Forecast</string>
+
 </resources>
