@@ -95,8 +95,10 @@ public class WeatherForecast extends AppCompatActivity { /** ATTENTION: This was
                 XmlPullParser parser = Xml.newPullParser();
                 parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
                 parser.setInput(in, null);
-
                 parser.nextTag();
+                ProgressBar mpro = (ProgressBar) findViewById(R.id.progressBar);
+                mpro.setVisibility(View.VISIBLE);
+                publishProgress(0);
                 while (parser.next() != XmlPullParser.END_DOCUMENT) {
                     if (parser.getEventType() != XmlPullParser.START_TAG) {
                         continue;
@@ -114,7 +116,7 @@ public class WeatherForecast extends AppCompatActivity { /** ATTENTION: This was
                     if (name.equals("weather")) {
                         String iconfile = parser.getAttributeValue(null, "icon") + ".png";
 
-                        if (fileExistence(iconfile)) {
+                        if (!fileExistence(iconfile)) {
                             pictureTem = HttpUtils.getImage("http://openweathermap.org/img/w/" + iconfile);
                             FileOutputStream outputStream = openFileOutput(iconfile, Context.MODE_PRIVATE);
                             pictureTem.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
@@ -146,7 +148,8 @@ public class WeatherForecast extends AppCompatActivity { /** ATTENTION: This was
 
         protected void onProgressUpdate(Object... progress) {
             ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
-            progressBar.setVisibility(View.VISIBLE);
+            progressBar.setProgress((Integer) progress[0]);
+
         }
 
         @Override
@@ -155,6 +158,8 @@ public class WeatherForecast extends AppCompatActivity { /** ATTENTION: This was
             ((TextView) findViewById(R.id.maxTem)).setText(getMaxTem());
             ((TextView) findViewById(R.id.currentTem)).setText(getCurrentTem());
             ((ImageView) findViewById(R.id.weatherImage)).setImageBitmap(getPictureTem());
+            findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
+
         }
 
         String getMinTem() {
